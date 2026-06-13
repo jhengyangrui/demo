@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Langkawi Through Local Eyes | LangkawiByLocals.com</title>
+    <style>
+        /* Importing Premium Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+        /* CSS Reset & Variable Definitions */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        :root {
+            --primary: #003652;
+            --primary-light: #005B88;
+            --secondary: #C59B6D; 
+            --accent: #DE6B48; 
+            --text-dark: #1F2124;
+            --text-muted: #6C7A89;
+            --bg-light: #F8F9FA; 
+            --premium-shadow: 0 30px 60px rgba(0, 54, 82, 0.05), 0 10px 25px rgba(0, 54, 82, 0.03);
+            --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 580px;
+            background: linear-gradient(rgba(0, 37, 56, 0.35), rgba(0, 20, 31, 0.85)), 
+                        url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 24px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeIn 1.2s var(--transition-smooth);
+        }
+
+        .hero-tagline {
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            text-transform: uppercase;
+            letter-spacing: 6px; 
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            line-height: 1.2;
+        }
+
+        .hero-subheadline {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            font-weight: 300;
+            margin-bottom: 45px;
+            opacity: 0.85;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), #D4542E);
+            color: white;
+            padding: 16px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 25px rgba(222, 107, 72, 0.35);
+            transition: all 0.4s var(--transition-smooth);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(222, 107, 72, 0.5);
+            opacity: 0.95;
+        }
+
+        /* Core Features Banner */
+        .features-banner {
+            background-color: white;
+            padding: 50px 40px;
+            box-shadow: var(--premium-shadow);
+            position: relative;
+            z-index: 10;
+            margin-top: -50px;
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 4px; 
+            border: 1px solid rgba(197, 155, 109, 0.15); 
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            position: relative;
+        }
+
+        .feature-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 15%;
+            height: 70%;
+            width: 1px;
+            background: rgba(0, 54, 82, 0.06);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .feature-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            padding: 0 10px;
+        }
+
+        /* Tours Section */
+        .tours-section {
+            max-width: 1140px; 
+            margin-top: clamp(80px, 10vw, 120px);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0; /* UX Fix: Removed bottom margin to pull the form closer */
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: clamp(50px, 8vw, 80px);
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-header .divider {
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            margin: 20px auto;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .tours-list {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(35px, 5vw, 50px); 
+        }
+
+        /* Horizontal Row Design (Desktop Default) */
+        .tour-card {
+            background-color: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--premium-shadow);
+            transition: all 0.5s var(--transition-smooth);
+            display: flex;
+            flex-direction: row; 
+            min-height: 320px; 
+            border: 1px solid rgba(0,0,0,0.015);
+        }
+
+        .tour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 40px 80px rgba(0, 54, 82, 0.08);
+        }
+
+        .tour-img-wrap {
+            flex: 0 0 38%; 
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tour-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.8s var(--transition-smooth);
+        }
+
+        .tour-card:hover .tour-img {
+            transform: scale(1.06);
+        }
+
+        .tour-badge {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: var(--primary);
+            padding: 6px 16px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 1px solid var(--secondary);
+        }
+
+        .tour-content {
+            padding: clamp(30px, 4vw, 40px) clamp(30px, 4vw, 45px); 
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+        }
+
+        .tour-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .tour-desc {
+            font-size: 0.95rem;
+            color: #525961;
+            margin-bottom: 25px;
+            font-weight: 300;
+            line-height: 1.75;
+        }
+
+        .tour-footer {
+            border-top: 1px solid rgba(0, 54, 82, 0.05);
+            padding-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .tour-tag {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Form Section (Premium Soft Light Blue Theme - Tightened Spacing) */
+        .booking-section {
+            /* UX Tweak: Gradient transition area compressed to 90px to perfectly match the closer proximity */
+            background: linear-gradient(to bottom, #F8F9FA 0%, #E9F1F5 90px, #DCE7EE 100%);
+            padding-top: clamp(40px, 6vw, 70px); /* Significantly reduced top padding to bring cards closer */
+            padding-bottom: clamp(80px, 12vw, 140px);
+            padding-left: 24px;
+            padding-right: 24px;
+            color: var(--text-dark);
+        }
+
+        .form-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff; 
+            padding: clamp(35px, 6vw, 55px) clamp(25px, 5vw, 50px);
+            border-radius: 8px;
+            border: 1px solid rgba(197, 155, 109, 0.25); 
+            box-shadow: 0 40px 90px rgba(0, 54, 82, 0.06); 
+        }
+
+        .form-container h2 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 15px;
+            color: var(--primary); 
+            font-weight: 700;
+        }
+
+        .form-container p {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: clamp(30px, 5vw, 45px);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            background: #FCFDFD; 
+            border: 1px solid rgba(0, 54, 82, 0.12);
+            border-radius: 4px;
+            font-size: 1rem; 
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            background: white;
+            border-color: var(--secondary);
+            box-shadow: 0 0 12px rgba(197, 155, 109, 0.25);
+        }
+
+        select.form-control option {
+            color: var(--text-dark);
+            background: white;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%23003652' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 18px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.4s var(--transition-smooth);
+            box-shadow: 0 5px 20px rgba(197, 155, 109, 0.25);
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .submit-btn:hover {
+            background-color: #dcb386;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(197, 155, 109, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #081118;
+            color: #7A8895;
+            text-align: center;
+            padding: 50px 24px;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            line-height: 2;
+            letter-spacing: 0.5px;
+        }
+
+        footer strong {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================================================
+           ROBUST RESPONSIVE MEDIA QUERIES (RWD)
+           ========================================================================== */
+
+        @media (max-width: 992px) {
+            .features-banner {
+                margin-top: -30px;
+                padding: 40px 30px;
+            }
+            .features-container {
+                gap: 30px;
+            }
+            .tour-card {
+                min-height: 280px;
+            }
+            .tour-img-wrap {
+                flex: 0 0 40%; 
+            }
+        }
+
+        @media (max-width: 900px) {
+            .tour-card {
+                flex-direction: column; 
+                min-height: auto;
+            }
+            .tour-img-wrap {
+                flex: 0 0 auto;
+                height: 260px; 
+                width: 100%;
+            }
+            .tour-content {
+                padding: 30px;
+            }
+            .tour-desc {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .features-banner {
+                margin-top: 0; 
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                padding: 40px 24px;
+            }
+            .features-container {
+                grid-template-columns: 1fr; 
+                gap: 35px;
+            }
+            .feature-item:not(:last-child)::after {
+                display: none; 
+            }
+            .feature-item:not(:last-child) {
+                border-bottom: 1px solid rgba(0, 54, 82, 0.05);
+                padding-bottom: 25px;
+            }
+            .section-header {
+                margin-bottom: 45px;
+            }
+            .booking-section {
+                padding-top: 40px; /* Adapts for tight mobile stacking */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">One Island. Endless Experiences.</p>
+            <h1>Discover Langkawi Through Local Eyes</h1>
+            <div class="hero-subheadline">Where Every Journey Becomes a Story</div>
+            <p>From stunning beaches and lush rainforests to cultural treasures and island adventures, experience the absolute best of Langkawi with our seasoned local experts.</p>
+            <a href="#booking" class="cta-btn">Start Exploring</a>
+        </div>
+    </section>
+
+    <!-- Core Features Banner -->
+    <div class="features-banner">
+        <div class="features-container">
+            <div class="feature-item">
+                <span class="feature-icon">⚓</span>
+                <h3>Cruise-Friendly Timing</h3>
+                <p>Perfected schedules customized strictly to your ship's timetable.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🚗</span>
+                <h3>Comfortable Transport</h3>
+                <p>Relax in fully modern, premium air-conditioned fleet vehicles.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🗺️</span>
+                <h3>Local Expert Guides</h3>
+                <p>Friendly, professional, and knowledgeable storytelling guides.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tours Section (Horizontal Rows on Desktop -> Beautiful Grid Cards on Mobile) -->
+    <section class="tours-section">
+        <div class="section-header">
+            <h2>Popular Shore Excursions</h2>
+            <div class="divider"></div>
+            <p>Handcrafted island experiences highly recommended by travelers worldwide</p>
+        </div>
+
+        <div class="tours-list">
+            <!-- Tour 1 -->
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80');"></div>
+                    <span class="tour-badge">Best Seller</span>
+                </div>
+                <div class="tour-content">
+                    <div>
+                        <h3 class="tour-title">Langkawi Sky Bridge & Cable Car</h3>
+                        <p class="tour-desc">Ride one of the steepest cable cars in the world up Machincang Mountain. Walk along the legendary curved suspension bridge suspended high above pristine prehistoric rainforests.</p>
+                    </div>
+                    <div class="tour-footer">
+                        <span class="tour-tag">Iconic Landscapes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 2 -->
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=80');"></div>
+                    <span class="tour-badge">Private / Sharing</span>
+                </div>
+                <div class="tour-content">
+                    <div>
+                        <h3 class="tour-title">Eagle Square & Iconic Landmarks</h3>
+                        <p class="tour-desc">Marvel at the grand 12-meter tall eagle sculpture at Dataran Lang. Delve deep into the island’s rich spiritual folklore, local heritage art, and historical town centers.</p>
+                    </div>
+                    <div class="tour-footer">
+                        <span class="tour-tag">Authentic Culture</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 3 -->
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80');"></div>
+                    <span class="tour-badge">Eco Adventure</span>
+                </div>
+                <div class="tour-content">
+                    <div>
+                        <h3 class="tour-title">Kilim Mangrove Boat Tour</h3>
+                        <p class="tour-desc">Cruise seamlessly through protected mangrove swamps and ancient limestone karst formations. Witness wild eagles feeding, explore dark bat caves, and boat past a vibrant floating village.</p>
+                    </div>
+                    <div class="tour-footer">
+                        <span class="tour-tag">Tropical Explorer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 4 -->
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80');"></div>
+                    <span class="tour-badge">Nature & Leisure</span>
+                </div>
+                <div class="tour-content">
+                    <div>
+                        <h3 class="tour-title">Telaga Tujuh Waterfalls & Pristine Beaches</h3>
+                        <p class="tour-desc">Hike to the mystical Seven Wells Waterfall to swim in its refreshing natural rock pools. Cap off your day on the powdery sands of Langkawi’s world-renowned tropical beaches.</p>
+                    </div>
+                    <div class="tour-footer">
+                        <span class="tour-tag">Unforgettable Moments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section (Premium Soft Light Blue - Proximity Fine-Tuned) -->
+    <section class="booking-section" id="booking">
+        <div class="form-container">
+            <h2>Book Your Tour Now!</h2>
+            <p>Fill out the inquiry form below, and our local travel specialists will craft your custom itinerary quote within 24 hours.</p>
+            
+            <form action="#" method="POST" onsubmit="alert('Thank you for your inquiry! Our local travel experts will contact you via Email or WhatsApp shortly.'); return false;">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" class="form-control" placeholder="e.g., John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Phone Number / WhatsApp *</label>
+                    <input type="tel" id="contact" class="form-control" placeholder="e.g., +1 234 567 890" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" class="form-control" placeholder="e.g., johndoe@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tour-type">Preferred Shore Excursion *</label>
+                    <select id="tour-type" class="form-control" required>
+                        <option value="" disabled selected>Please select an option...</option>
+                        <option value="skybridge">Langkawi Sky Bridge & Cable Car</option>
+                        <option value="eaglesquare">Eagle Square & Iconic Landmarks</option>
+                        <option value="mangrove">Kilim Mangrove Boat Tour</option>
+                        <option value="waterfall">Telaga Tujuh Waterfalls & Pristine Beaches</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Special Requirements & Remarks (e.g., Cruise Docking Times, Total Guests)</label>
+                    <textarea id="message" class="form-control" placeholder="Tell us your ship name, arrival/departure schedules, dietary restrictions, or if traveling with kids..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Booking Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 <strong>LangkawiByLocals.com</strong>. All Rights Reserved.</p>
+        <p style="font-size: 0.75rem; margin-top: 5px; opacity: 0.6; letter-spacing: 1px;">ON TIME RETURN TO YOUR SHIP IS OUR PROMISE. Relax and enjoy your day!</p>
+    </footer>
+
+</body>
+</html>
