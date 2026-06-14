@@ -39,13 +39,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Hero Section */
+        /* Hero Section - Optimized with 1.png as background banner */
         .hero {
             position: relative;
             height: 90vh;
-            min-height: 580px;
-            background: linear-gradient(rgba(0, 37, 56, 0.35), rgba(0, 20, 31, 0.85)), 
-                        url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 37, 56, 0.3), rgba(0, 20, 31, 0.8)), 
+                        url('1.png') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -181,7 +181,7 @@
             margin-top: clamp(80px, 10vw, 120px);
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 0; /* UX Fix: Removed bottom margin to pull the form closer */
+            margin-bottom: 0; 
             padding: 0 24px;
         }
 
@@ -218,7 +218,7 @@
             gap: clamp(35px, 5vw, 50px); 
         }
 
-        /* Horizontal Row Design (Desktop Default) */
+        /* Horizontal Row Design (Desktop Left-Image, Right-Text) */
         .tour-card {
             background-color: white;
             border-radius: 4px;
@@ -308,11 +308,11 @@
             letter-spacing: 2px;
         }
 
-        /* Form Section (Premium Soft Light Blue Theme - Tightened Spacing) */
+        /* Form Section - Upgraded with Soft Blue Gradient + 3.png Subtle Blend Overlay */
         .booking-section {
-            /* UX Tweak: Gradient transition area compressed to 90px to perfectly match the closer proximity */
-            background: linear-gradient(to bottom, #F8F9FA 0%, #E9F1F5 90px, #DCE7EE 100%);
-            padding-top: clamp(40px, 6vw, 70px); /* Significantly reduced top padding to bring cards closer */
+            background: linear-gradient(to bottom, #F8F9FA 0%, rgba(233, 241, 245, 0.88) 90px, rgba(220, 231, 238, 0.94) 100%),
+                        url('3.png') no-repeat center center/cover;
+            padding-top: clamp(40px, 6vw, 70px); 
             padding-bottom: clamp(80px, 12vw, 140px);
             padding-left: 24px;
             padding-right: 24px;
@@ -503,14 +503,14 @@
                 margin-bottom: 45px;
             }
             .booking-section {
-                padding-top: 40px; /* Adapts for tight mobile stacking */
+                padding-top: 40px; 
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Banner -->
+    <!-- Hero Banner (1.png Backed) -->
     <section class="hero">
         <div class="hero-content">
             <p class="hero-tagline">One Island. Endless Experiences.</p>
@@ -542,7 +542,7 @@
         </div>
     </div>
 
-    <!-- Tours Section (Horizontal Rows on Desktop -> Beautiful Grid Cards on Mobile) -->
+    <!-- Tours Section -->
     <section class="tours-section">
         <div class="section-header">
             <h2>Popular Shore Excursions</h2>
@@ -551,10 +551,10 @@
         </div>
 
         <div class="tours-list">
-            <!-- Tour 1 -->
+            <!-- Tour 1 (Mapped to 1.png) -->
             <div class="tour-card">
                 <div class="tour-img-wrap">
-                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tour-img" style="background-image: url('1.png');"></div>
                     <span class="tour-badge">Best Seller</span>
                 </div>
                 <div class="tour-content">
@@ -568,32 +568,15 @@
                 </div>
             </div>
 
-            <!-- Tour 2 -->
+            <!-- Tour 2 (Mapped to 4.png) -->
             <div class="tour-card">
                 <div class="tour-img-wrap">
-                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=80');"></div>
-                    <span class="tour-badge">Private / Sharing</span>
-                </div>
-                <div class="tour-content">
-                    <div>
-                        <h3 class="tour-title">Eagle Square & Iconic Landmarks</h3>
-                        <p class="tour-desc">Marvel at the grand 12-meter tall eagle sculpture at Dataran Lang. Delve deep into the island’s rich spiritual folklore, local heritage art, and historical town centers.</p>
-                    </div>
-                    <div class="tour-footer">
-                        <span class="tour-tag">Authentic Culture</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tour 3 -->
-            <div class="tour-card">
-                <div class="tour-img-wrap">
-                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="tour-img" style="background-image: url('4.png');"></div>
                     <span class="tour-badge">Eco Adventure</span>
                 </div>
                 <div class="tour-content">
                     <div>
-                        <h3 class="tour-title">Kilim Mangrove Boat Tour</h3>
+                        <h3 class="tour-title">Kilim Mangrove & Limestone Canyon Cruise</h3>
                         <p class="tour-desc">Cruise seamlessly through protected mangrove swamps and ancient limestone karst formations. Witness wild eagles feeding, explore dark bat caves, and boat past a vibrant floating village.</p>
                     </div>
                     <div class="tour-footer">
@@ -602,16 +585,33 @@
                 </div>
             </div>
 
-            <!-- Tour 4 -->
+            <!-- Tour 3 (Mapped to 2.png) -->
             <div class="tour-card">
                 <div class="tour-img-wrap">
-                    <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80');"></div>
-                    <span class="tour-badge">Nature & Leisure</span>
+                    <div class="tour-img" style="background-image: url('2.png');"></div>
+                    <span class="tour-badge">Nature Heritage</span>
                 </div>
                 <div class="tour-content">
                     <div>
-                        <h3 class="tour-title">Telaga Tujuh Waterfalls & Pristine Beaches</h3>
-                        <p class="tour-desc">Hike to the mystical Seven Wells Waterfall to swim in its refreshing natural rock pools. Cap off your day on the powdery sands of Langkawi’s world-renowned tropical beaches.</p>
+                        <h3 class="tour-title">Tropical Rainforest & Wild Hornbill Safari</h3>
+                        <p class="tour-desc">Delve deep into the island's lush jungle habitats to marvel at pristine flora and encounter majestic local wildlife, including Langkawi's legendary giant Hornbills in their natural environment.</p>
+                    </div>
+                    <div class="tour-footer">
+                        <span class="tour-tag">Authentic Nature</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 4 (Mapped to 5.png) -->
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <div class="tour-img" style="background-image: url('5.png');"></div>
+                    <span class="tour-badge">Island Paradise</span>
+                </div>
+                <div class="tour-content">
+                    <div>
+                        <h3 class="tour-title">Beautiful Pristine Beaches & Hidden Paradise</h3>
+                        <p class="tour-desc">Escape to jaw-dropping panoramic bays surrounded by crystal-clear emerald water. Relax on velvety white sands and submerge yourself into Langkawi's finest isolated beach heavens.</p>
                     </div>
                     <div class="tour-footer">
                         <span class="tour-tag">Unforgettable Moments</span>
@@ -621,7 +621,7 @@
         </div>
     </section>
 
-    <!-- Contact Form Section (Premium Soft Light Blue - Proximity Fine-Tuned) -->
+    <!-- Contact Form Section (Light Coastal Blue Style with 3.png Sunset Blend Overlay) -->
     <section class="booking-section" id="booking">
         <div class="form-container">
             <h2>Book Your Tour Now!</h2>
@@ -648,9 +648,10 @@
                     <select id="tour-type" class="form-control" required>
                         <option value="" disabled selected>Please select an option...</option>
                         <option value="skybridge">Langkawi Sky Bridge & Cable Car</option>
-                        <option value="eaglesquare">Eagle Square & Iconic Landmarks</option>
-                        <option value="mangrove">Kilim Mangrove Boat Tour</option>
-                        <option value="waterfall">Telaga Tujuh Waterfalls & Pristine Beaches</option>
+                        <option value="eaglesquare">Kilim Mangrove & Hidden Canyon Cruise</option>
+                        <option value="mangrove">Tropical Rainforest & Wild Hornbill Safari</option>
+                        <option value="waterfall">Beautiful Pristine Beaches & Hidden Paradise</option>
+                        <option value="custom">Bespoke Fully Customized Private Tour</option>
                     </select>
                 </div>
 
